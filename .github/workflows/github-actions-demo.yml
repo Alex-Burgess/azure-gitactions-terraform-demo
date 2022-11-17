@@ -45,6 +45,9 @@ jobs:
       ARM_SUBSCRIPTION_ID: ca584010-c2a0-4d6b-bbc8-bdbd8acded9b
       ARM_TENANT_ID: c68d410e-e900-473c-ad09-1cae83bc52ff
     steps:
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
       # Checkout the repository to the GitHub Actions runner
       - uses: actions/checkout@v2
 
