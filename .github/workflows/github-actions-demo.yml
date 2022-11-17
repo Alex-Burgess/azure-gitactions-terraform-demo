@@ -36,6 +36,9 @@ jobs:
       run: az logout
   TF-Plan-Dev:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./terraform
     env:
       ARM_CLIENT_ID: 9e46ed8a-38cb-4e1f-8518-5ecc8dd5b419
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
