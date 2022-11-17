@@ -41,7 +41,7 @@ jobs:
         working-directory: ./terraform
     env:
       ARM_CLIENT_ID: 9e46ed8a-38cb-4e1f-8518-5ecc8dd5b419
-      ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
+      ARM_CLIENT_SECRET: ${{ secrets.TF_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ca584010-c2a0-4d6b-bbc8-bdbd8acded9b
       ARM_TENANT_ID: c68d410e-e900-473c-ad09-1cae83bc52ff
     steps:
