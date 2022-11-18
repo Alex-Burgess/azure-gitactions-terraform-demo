@@ -45,11 +45,17 @@ jobs:
       ARM_SUBSCRIPTION_ID: ca584010-c2a0-4d6b-bbc8-bdbd8acded9b
       ARM_TENANT_ID: c68d410e-e900-473c-ad09-1cae83bc52ff
     steps:
-      - uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      # - uses: azure/login@v1
+      #   with:
+      #     creds: ${{ secrets.AZURE_CREDENTIALS }}
       # Checkout the repository to the GitHub Actions runner
       - uses: actions/checkout@v2
+
+      - name: az login
+        uses: as login --service-principal -u 9e46ed8a-38cb-4e1f-8518-5ecc8dd5b419 -p ${{ secrets.TF_CLIENT_SECRET }} -t c68d410e-e900-473c-ad09-1cae83bc52ff
+
+      - name: Set subscription
+        uses: as account set -s ca584010-c2a0-4d6b-bbc8-bdbd8acded9b
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
