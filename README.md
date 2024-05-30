@@ -1,4 +1,5 @@
-# azure-gitactions-demo
+# Azure GitHub Actions Demo
+Demonstrates how to create Azure resources using Terraform with a CI/CD pipeline.
 
 ## Terraform Setup
 
